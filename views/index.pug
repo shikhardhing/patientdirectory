@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+  head
+    title Patient Detail Entry
+    link(rel='stylesheet' href='css/bootstrap.css')
+    link(rel='stylesheet' href='css/style.css')
+    script(src='js/jquery.js')
+    script(src='js/bootstrap.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/validator/7.0.0/validator.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css')
+    script(src='js/script.js').
+  body
+    nav
+      .navbar.navbar-default
+        .navbar-header.navbar-brand Enter patient detail
+        a.navbar-right.navbar-brand(href="/getDirectory") Directory
+    form.form-horizontal.submit(method="post",action="/api/post")
+        .form-group
+          label.control-label.col-sm-2 FirstName
+          .col-sm-10
+            input.form-control#FirstName(placeholder="Enter FirstName",name="FirstName")
+        .form-group
+          label.control-label.col-sm-2 LastName
+          .col-sm-10
+            input.form-control#LastName(placeholder="Enter LastName",name="LastName")
+        .form-group
+          label.control-label.col-sm-2 Age
+          .col-sm-10
+            input.form-control#Age(placeholder="Enter Age",name="Age")
+        .form-group
+          label.control-label.col-sm-2 Date of Birth
+          .col-sm-10
+            input.form-control#DOB(placeholder="Enter DOB",name="DOB",type="date",max="2019-12-31",min="1900-01-01",required)
+        .form-group.form-inline
+          label.control-label.col-sm-2 Gender
+          .col-sm-10
+            select.form-control#Gender(name="Gender")
+              option Male
+              option Female
+        .form-group
+          label.control-label.col-sm-2 Phone
+          .col-sm-10
+            input.form-control#Phone(placeholder="Enter phone",name="Phone")
+        .form-group
+          label.control-label.col-sm-2 Free text information
+          .col-sm-10
+            input.form-control#Text(placeholder="Enter any text",name="Text")
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-default Submit

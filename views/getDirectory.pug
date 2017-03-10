@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+  head
+    title Patient Detail Entry
+    link(rel='stylesheet' href='css/bootstrap.css')
+    link(rel='stylesheet' href='css/style.css')
+    script(src='js/jquery.js')
+    script(src='js/bootstrap.js')
+    script(src='js/script.js').
+  body
+    nav
+      .navbar.navbar-default
+        .navbar-header.navbar-brand Patients directory
+        a.navbar-right.navbar-brand(href="/") Enter patient detail
+    table.table.table-striped
+      .col-sm-3
+        input.form-control#search(placeholder="Type to search by firstname",type="text")
+      thead
+        tr
+          th FirstName
+          th LastName
+          th Age
+          th DOB
+          th Gender
+          th Phone
+          th Free text
+      tbody
+        for i in obj
+          tr
+            td.firstname #{i.FirstName}
+            td #{i.LastName}
+            td #{i.Age}
+            td #{i.DOB}
+            td #{i.Gender}
+            td #{i.Phone}
+            td #{i.Text}
